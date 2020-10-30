@@ -1,0 +1,560 @@
+/** ---------------------------------------------------------------
+**  ██████╗ ██████╗ ███████╗██╗██████╗ ██╗ █████╗ ███╗   ██╗██╗████████╗███████╗
+** ██╔═══██╗██╔══██╗██╔════╝██║██╔══██╗██║██╔══██╗████╗  ██║██║╚══██╔══╝██╔════╝
+** ██║   ██║██████╔╝███████╗██║██║  ██║██║███████║██╔██╗ ██║██║   ██║   █████╗
+** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
+** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
+**  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
+**
+**  —— Made with 💎 by TriDiamond
+**  version 1.0.0
+** --------------------------------------------------------------- */
+
+/******************************************
+   Currently only comes int dark theme,
+   Light theme is still working on it,
+   but it wil come soon or later.
+******************************************/
+
+/* .theme-light {
+  --background-primary: #fbfbfb;
+  --background-primary-alt: #fbfbfb;
+  --background-secondary: #fbfbfb;
+  --background-secondary-alt: #2e3236;
+  --text-normal: #333;
+  --text-faint: #b2b2b2;
+  --text-title-h1: #333;
+  --text-title-h2: #333;
+  --text-title-h3: #333;
+  --text-title-h4: #333;
+  --text-title-h5: #333;
+  --text-link: #b4b4b4;
+  --text-a: #db4d52;
+  --text-a-hover: #db4d52;
+  --text-mark: #d3ffa4;
+  --pre-code: #ffffff;
+  --interactive-accent: #92a1a1;
+  --interactive-before: #5e6565;
+  --background-modifier-border: #92a1a17a;
+  --blockquote-border: #d6555f;
+  --tag-background: #a7b0b3;
+  --interactive-accent-rgb: #db4d52;
+  --font-family-editor: Avenir, 'Avenir Next';
+  --font-family-preview: Avenir, 'Avenir Next';
+}
+ */
+
+.theme-dark {
+  --background-primary: #100e17;
+  --background-primary-alt: #0d0b12;
+  --background-secondary: #191621;
+  --background-secondary-alt: #0d0b12;
+  --text-normal: #bebebe;
+  --text-accent: #0db9d7;
+  --text-sub-accent: #fe66ce;
+  --text-dim: #45aaff;
+  --text-faint: #7aa2f7;
+  --text-title-h1: #cbdbe5;
+  --text-title-h2: #cbdbe5;
+  --text-title-h3: #cbdbe5;
+  --text-title-h4: #cbdbe5;
+  --text-title-h5: #cbdbe5;
+  --text-link: #b4b4b4;
+  --text-a: #6bcafb;
+  --text-a-hover: #6bcafb;
+  --text-mark: #263d92;
+  --pre-code: #252525;
+  --interactive-accent: rgba(14, 210, 247, 0.5);
+  --interactive-accent-hover: rgba(14, 210, 247, 0.8);
+  --interactive-before: #5e6565;
+  --background-modifier-border: #92a1a17a;
+  --blockquote-border: #4aa8fb;
+  --tag-background: #a7b0b3;
+  --interactive-accent-rgb: #3dd7fb;
+  --font-family-editor: 'rubiklight';
+  --font-family-preview: 'rubiklight';
+  --bg-accent-35: rgba(244, 86, 157, 0.45);
+  --bg-accent-15: rgba(244, 86, 157, 0.15);
+  --text-highlight-bg: rgba(244, 86, 157, 0.15);
+  --background-modifier-border: rgba(14, 210, 247, 0.05);
+}
+
+/***************************************/
+/*    EDITOR THEME STYLES              */
+/***************************************/
+
+:root {
+  --default-font: 'Rubik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+}
+
+.titlebar {
+  background-color: var(--background-primary-alt);
+}
+
+.side-dock-ribbon-tab,
+.side-dock-ribbon-action,
+.workspace-ribbon-collapse-btn,
+.workspace-tab-header {
+  transition: all 400ms ease-in-out;
+  color: var(--text-accent);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-action:hover,
+.workspace-ribbon-collapse-btn:hover,
+.workspace-tab-header:hover {
+  opacity: 1;
+  color: var(--text-accent);
+}
+
+.workspace-tab-header.is-active {
+  opacity: 1;
+  color: var(--text-accent);
+}
+
+.workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
+.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+  background-color: var(--background-primary-alt);
+  color: var(--text-accent);
+}
+
+.pane-list-item:hover .pane-list-item-ending-flair {
+  background-color: var(--background-secondary);
+  color: var(--text-accent);
+}
+
+.nav-folder-collapse-indicator {
+  color: var(--text-accent);
+}
+
+.nav-file.is-active > .nav-file-title,
+.nav-file.is-active > .nav-folder-title,
+.nav-file.is-active > .nav-folder-collapse-indicator,
+.nav-folder.is-active > .nav-file-title,
+.nav-folder.is-active > .nav-folder-title,
+.nav-folder.is-active > .nav-folder-collapse-indicator {
+  color: var(--text-accent);
+}
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  color: var(--text-accent);
+}
+
+body:not(.is-grabbing) .nav-file-title:hover .nav-folder-collapse-indicator,
+body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
+  color: var(--text-accent);
+}
+
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--text-accent);
+}
+
+.nav-folder.mod-root > .nav-file-title,
+.nav-folder.mod-root > .nav-folder-title {
+  color: var(--text-accent);
+}
+
+.checkbox-container.is-enabled {
+  background-color: rgba(14, 210, 247, 0.7);
+}
+
+.workspace-drop-overlay {
+  background-color: var(--background-primary-alt);
+}
+
+.workspace-ribbon.is-collapsed {
+  background-color: var(--background-primary-alt);
+}
+
+.workspace-ribbon.mod-left.is-collapsed,
+.workspace-ribbon.mod-right.is-collapsed {
+  border-color: #101014;
+}
+
+.status-bar {
+  background-color: var(--background-primary-alt);
+  border-color: #101014;
+}
+
+.theme-dark .notice {
+  background-color: var(--background-primary-alt);
+  color: var(--text-accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/***************************************/
+/*    EDITOR THEME STYLES              */
+/***************************************/
+
+.cm-strong,
+strong {
+  color: #81a3f1;
+}
+
+.cm-em,
+em {
+  color: #bb9af7;
+  font-family: OperatorMonoSSmLig-Book !important;
+}
+
+.cm-s-obsidian span.cm-formatting-list {
+  color: var(--text-accent);
+}
+
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+  color: var(--text-sub-accent);
+}
+
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--text-accent);
+  opacity: 1;
+  font-family: 'OperatorMonoSSmLig-Book', '华文细黑', 'STXihei', 'PingFang TC', '微软雅黑体',
+    'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun', 'Helvetica Neue',
+    'Helvetica', Arial, sans-serif !important;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.cm-s-obsidian
+  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
+  overflow-wrap: break-word;
+  background-color: rgba(14, 210, 247, 0.05);
+  word-wrap: break-word;
+  border-radius: 0.3rem;
+}
+
+.cm-s-obsidian span.cm-inline-code {
+  color: rgba(14, 210, 247, 0.9) !important;
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock {
+  color: var(--text-sub-accent);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--background-secondary-alt);
+}
+
+button.mod-cta {
+}
+
+/***************************************/
+/*    PREVIEW THEME STYLES             */
+/***************************************/
+
+/** headings */
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  /* padding-top: 1.25rem; */
+  margin: 45px 0 20px 0;
+  position: relative;
+}
+
+.markdown-preview-view h2:after,
+.markdown-preview-view h3:after,
+.markdown-preview-view h4:after,
+.markdown-preview-view h5:after,
+.markdown-preview-view h6:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 35%;
+  left: 0;
+  bottom: -0.2rem;
+  background-image: linear-gradient(to right, var(--text-sub-accent), #100e17);
+  opacity: 1;
+}
+
+/* link */
+a,
+.internal-link,
+.cm-hmd-internal-link,
+.cm-link,
+.cm-formatting-link {
+  text-decoration: none !important;
+  color: var(--text-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.external-link {
+  padding: 0;
+}
+
+/* link hover color */
+a:hover,
+.internal-link:hover {
+  text-decoration: none !important;
+  color: var(--text-sub-accent);
+}
+
+.internal-link:hover,
+.external-link:hover {
+  background-size: 4px 50px;
+}
+
+/* make external links italics to differentiate */
+a:not(.internal-link) {
+  font-style: italic;
+}
+
+.internal-link,
+.external-link {
+  background: linear-gradient(to bottom, var(--bg-accent-35) 0%, var(--bg-accent-35) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px 5px;
+  text-decoration: none;
+  transition: all 400ms ease;
+}
+
+/** tags */
+
+.tag {
+  background: #100e18;
+  color: #7a7a8c;
+  color: var(--text-accent);
+  white-space: nowrap;
+  border: 2px solid #28242f;
+  border-radius: 2rem;
+  padding: 0.05rem 0.5rem;
+  font-family: OperatorMonoSSmLig-Book, '华文细黑', 'STXihei', 'PingFang TC', '微软雅黑体',
+    'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun', 'Helvetica Neue',
+    'Helvetica', Arial, sans-serif !important;
+  font-size: 0.8rem;
+  background: linear-gradient(to bottom, rgba(25, 22, 33) 0%, rgba(25, 22, 33) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 0 0;
+  text-decoration: none;
+  transition: all 400ms ease;
+}
+
+.tag:hover {
+  color: var(--text-normal) !important;
+  border-color: var(--text-accent);
+  opacity: 1;
+  background-size: 4px 50px;
+}
+
+.tag[href^='#working-draft'],
+.tag[href^='#进行中'] {
+  background-color: #4d3ca6;
+  color: #fff;
+}
+.tag[href^='#notes'],
+.tag[href^='#笔记'] {
+  background-color: #17b978;
+  color: #fff;
+}
+.tag[href^='#knowledge'],
+.tag[href^='#知识'] {
+  background-color: #005792;
+  color: #fff;
+}
+.tag[href^='#article'],
+.tag[href^='#文章'] {
+  background-color: #f95959;
+  color: #fff;
+}
+.tag[href^='#ideas'],
+.tag[href^='#想法'] {
+  background-color: #ffc93c;
+  color: #000;
+}
+
+/* at a rule line before ul list */
+
+ul ul {
+  position: relative;
+}
+ul ul::before {
+  content: '';
+  border-left: 1px solid var(--text-accent);
+  position: absolute;
+  opacity: 0.35;
+}
+ul ul::before {
+  left: -1em;
+  top: 0;
+  bottom: 0;
+}
+
+/* bullet lists */
+ul,
+ul ul,
+ol ul,
+ul ul ul,
+ol ul ul {
+  list-style: none;
+}
+li > p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul li:not(.task-list-item)::before {
+  content: '•';
+  color: var(--text-accent);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.15em;
+  padding: 0;
+  font-weight: bold;
+  text-shadow: 0 0 0.5em var(--accent-2);
+}
+ul ul li:not(.task-list-item)::before {
+  content: '•';
+}
+ul ul ul li:not(.task-list-item)::before {
+  content: '•';
+}
+
+/* numbered lists */
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+ol > li {
+  counter-increment: li;
+}
+ol > li:not(.task-list-item)::before,
+ul ol > li:not(.task-list-item)::before,
+ul ul ol > li:not(.task-list-item)::before,
+ul ul ul ol > li:not(.task-list-item)::before {
+  content: '.' counter(li);
+  color: var(--text-accent);
+  font-weight: normal;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
+  word-wrap: none;
+  overflow: visible;
+  word-break: keep-all;
+}
+
+/* rule line when there are checkboxes*/
+ul .task-list-item ul::before {
+  left: 0.15em !important;
+}
+
+/* Remove blockquote left margin */
+blockquote {
+  margin-inline-start: 0;
+}
+
+/* blockquote style overwrite */
+
+.markdown-preview-view blockquote {
+  position: relative;
+  padding: 1rem 2rem 1rem 3rem;
+  color: #bdbdbd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 2em;
+  border-left: 3px rgba(14, 210, 247, 0.5) solid;
+  border-top: transparent;
+  border-bottom: transparent;
+  border-right: transparent;
+  background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
+}
+
+.markdown-preview-view blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 2px;
+  width: 60%;
+  background: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #13111a);
+}
+
+.markdown-preview-view blockquote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  height: 2px;
+  width: 25%;
+  background: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #15131c);
+}
+
+.markdown-preview-view blockquote p {
+  position: relative;
+}
+
+.markdown-preview-view blockquote p:first-of-type::before {
+  content: '!!';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-accent);
+  position: absolute;
+  top: 0.1rem;
+  left: -1.8rem;
+}
+
+/** inline code */
+.markdown-preview-view code {
+  overflow-wrap: break-word;
+  background-color: rgba(14, 210, 247, 0.05);
+  word-wrap: break-word;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.3rem;
+  margin: 0 0.3rem;
+  color: rgba(14, 210, 247, 0.9) !important;
+}
+
+/** hr styles */
+
+.markdown-preview-view hr {
+  margin-block-start: 4em;
+  margin-block-end: 4em;
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(to right, #100e17, var(--text-accent), #100e17);
+}
+
+.markdown-preview-view hr::after {
+  content: '§';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: 50% 50%;
+  padding: 0.5rem;
+  color: var(--text-sub-accent);
+  background-color: #100e17;
+}
+
+.theme-dark :not(pre) > code[class*='language-'],
+.theme-dark pre[class*='language-'] {
+  background-color: var(--background-secondary);
+}
+
+.markdown-preview-view img {
+  display: block;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
