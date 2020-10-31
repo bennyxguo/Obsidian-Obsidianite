@@ -50,7 +50,7 @@
   --background-secondary-alt: #0d0b12;
   --text-normal: #bebebe;
   --text-accent: #0db9d7;
-  --text-sub-accent: #fe66ce;
+  --text-sub-accent: #f4569d;
   --text-dim: #45aaff;
   --text-faint: #7aa2f7;
   --text-title-h1: #cbdbe5;
@@ -74,7 +74,7 @@
   --font-family-preview: 'Rubik';
   --bg-sub-accent-35: rgba(14, 210, 247, 0.35);
   --bg-accent-35: rgba(122, 162, 247, 0.9);
-  --text-highlight-bg: rgba(244, 86, 157, 0.15);
+  --text-highlight-bg: rgba(244, 86, 157, 0.25);
   --background-modifier-border: rgba(14, 210, 247, 0.05);
   --test-color: rgb(122, 162, 247);
 }
