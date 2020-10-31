@@ -13,7 +13,7 @@ Obsidian.md custom theme, it's dark and simple but yet still stays sparkles!
     <img src="https://img.shields.io/github/license/TriDiamond/Obsidian-Obsidianite">
   </p>
 
-**[CHANGES](https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG)**
+**[CHANGES](https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md)**
 
 </div>
 
