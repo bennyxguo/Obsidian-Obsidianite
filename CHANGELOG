@@ -1,0 +1,8 @@
+# Changelog
+
+## v1.0.1 (Oct 31, 2020)
+
+### Bug fixes 🐛
+
++ Fixed when numbered list going over 10+, the text in preview mode will randomly drop into 2 lines.
++ Fixed a few spelling errors in the css documents.

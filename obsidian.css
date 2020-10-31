@@ -7,12 +7,11 @@
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
 **
 **  —— Made with 💎 by TriDiamond
-**  version 1.0.0
 ** --------------------------------------------------------------- */
 
 /******************************************
-   Currently only comes int dark theme,
-   Light theme is still working on it,
+   Currently only comes in dark theme,
+   Light theme is still working in progress,
    but it wil come soon or later.
 ******************************************/
 
@@ -71,8 +70,8 @@
   --blockquote-border: #4aa8fb;
   --tag-background: #a7b0b3;
   --interactive-accent-rgb: #3dd7fb;
-  --font-family-editor: 'rubiklight';
-  --font-family-preview: 'rubiklight';
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
   --bg-accent-35: rgba(244, 86, 157, 0.45);
   --bg-accent-15: rgba(244, 86, 157, 0.15);
   --text-highlight-bg: rgba(244, 86, 157, 0.15);
@@ -448,9 +447,9 @@ ul ul ul ol > li:not(.task-list-item)::before {
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
-  word-wrap: none;
   overflow: visible;
   word-break: keep-all;
+  white-space: nowrap;
 }
 
 /* rule line when there are checkboxes*/
