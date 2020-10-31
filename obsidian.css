@@ -568,7 +568,12 @@ blockquote {
   margin-block-end: 4em;
   border: none;
   height: 1px;
-  background-image: linear-gradient(to right, #100e17, var(--text-accent), #100e17);
+  background-image: linear-gradient(
+    to right,
+    #100e17,
+    var(--text-accent),
+    var(--background-primary)
+  );
 }
 
 .markdown-preview-view hr::after {
@@ -580,7 +585,7 @@ blockquote {
   transform-origin: 50% 50%;
   padding: 0.5rem;
   color: var(--text-sub-accent);
-  background-color: #100e17;
+  background-color: var(--background-primary);
 }
 
 .theme-dark :not(pre) > code[class*='language-'],
