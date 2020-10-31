@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 1.0.3 (Nov 1, 2020)
+
+### Tweaks 💎
+
++ Making link's text much more clear and readable with the custom underline style.
++ Changed the editor view of the link style to match the effect of the preview link style.
+
 ## Version 1.0.2 (Oct 31, 2020)
 
 After being writing and reading for hours myself, I find a few tweaks needed to be made.

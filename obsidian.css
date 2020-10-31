@@ -5,7 +5,7 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.0.2
+**  —— Version 1.0.3
 **  —— Made with 💎 by TriDiamond
 ** --------------------------------------------------------------- */
 
@@ -233,8 +233,14 @@ em {
 
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link {
-  color: var(--text-accent);
-  opacity: 0.75;
+  text-shadow: -1px -1px 2px var(--background-secondary), -1px 1px 2px var(--background-secondary),
+    1px -1px 2px var(--background-secondary), 1px 1px 2px var(--background-secondary);
+  color: var(--text-normal);
+  background: linear-gradient(to bottom, var(--bg-sub-accent-35) 0%, var(--bg-sub-accent-35) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px 5px;
+  text-decoration: none;
 }
 
 .cm-s-obsidian span.cm-hashtag {
@@ -268,7 +274,11 @@ em {
 }
 
 .cm-s-obsidian span.cm-formatting-link {
-  color: var(--text-sub-accent);
+  color: var(--text-faint) !important;
+}
+
+.cm-s-obsidian span.cm-url {
+  opacity: 0.5;
 }
 
 /***************************************/
@@ -305,8 +315,7 @@ em {
 a,
 .internal-link,
 .cm-hmd-internal-link,
-.cm-link,
-.cm-formatting-link {
+.cm-link {
   text-decoration: none !important;
   color: var(--text-normal);
   position: relative;
@@ -326,6 +335,10 @@ a:hover,
 
 .internal-link:hover,
 .external-link:hover {
+  text-shadow: -1px -1px 2px var(--background-modifier-border),
+    -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
+    1px 1px 2px var(--background-modifier-border);
+  -webkit-text-fill-color: var(--text-accent);
   background-size: 4px 50px;
 }
 
@@ -336,13 +349,15 @@ a:not(.internal-link) {
 
 .internal-link,
 .external-link {
+  text-shadow: -1px -1px 2px var(--background-primary), -1px 1px 2px var(--background-primary),
+    1px -1px 2px var(--background-primary), 1px 1px 2px var(--background-primary);
   -webkit-text-fill-color: var(--text-normal);
   background: linear-gradient(to bottom, var(--bg-sub-accent-35) 0%, var(--bg-sub-accent-35) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px 5px;
   text-decoration: none;
-  transition: all 400ms ease;
+  transition: all 350ms ease;
 }
 
 /** tags */
