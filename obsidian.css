@@ -5,8 +5,9 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.0.3
+**  —— Version 1.0.4
 **  —— Made with 💎 by TriDiamond
+** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
 
 /******************************************
@@ -72,7 +73,7 @@
   --interactive-accent-rgb: #3dd7fb;
   --font-family-editor: 'Rubik';
   --font-family-preview: 'Rubik';
-  --bg-sub-accent-35: rgba(14, 210, 247, 0.35);
+  --bg-sub-accent-35: rgba(14, 210, 247, 0.55);
   --bg-accent-35: rgba(122, 162, 247, 0.9);
   --text-highlight-bg: rgba(244, 86, 157, 0.25);
   --background-modifier-border: rgba(14, 210, 247, 0.05);
@@ -84,8 +85,8 @@
 /***************************************/
 
 :root {
-  --default-font: 'Rubik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  --default-font: 'Rubik', 'Glow Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 }
 
 .titlebar {
@@ -202,6 +203,45 @@ h6 {
   color: var(--text-accent);
 }
 
+/* --------------- */
+/* FUTURISTIC CHECKBOXES */
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 20%;
+  border: 1px solid var(--text-accent);
+  padding: 0;
+  background: transparent;
+}
+
+input[type='checkbox']:hover {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 20%;
+  border: 1px solid white;
+  padding: 0;
+  background: transparent;
+}
+
+input[type='checkbox']:focus {
+  outline: 0;
+}
+
+input[type='checkbox']:checked {
+  background-color: transparent;
+  border: 1px solid transparent;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+
+.markdown-preview-view ul > li.task-list-item.is-checked {
+  text-decoration: line-through;
+  color: var(--text-faint);
+}
+
 /***************************************/
 /*    EDITOR THEME STYLES              */
 /***************************************/
@@ -243,12 +283,16 @@ em {
   text-decoration: none;
 }
 
+.cm-s-obsidian span.cm-link {
+  color: var(--text-accent) !important;
+}
+
 .cm-s-obsidian span.cm-hashtag {
   color: var(--text-accent);
   opacity: 1;
-  font-family: 'OperatorMonoSSmLig-Book', '华文细黑', 'STXihei', 'PingFang TC', '微软雅黑体',
-    'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun', 'Helvetica Neue',
-    'Helvetica', Arial, sans-serif !important;
+  font-family: 'OperatorMonoSSmLig-Book', 'Glow Sans SC', '华文细黑', 'STXihei', 'PingFang TC',
+    '微软雅黑体', 'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun',
+    'Helvetica Neue', 'Helvetica', Arial, sans-serif !important;
   font-style: italic;
   text-decoration: none;
 }
@@ -306,7 +350,7 @@ em {
   height: 1px;
   width: 35%;
   left: 0;
-  bottom: -0.2rem;
+  bottom: -8px;
   background-image: linear-gradient(to right, var(--text-sub-accent), #100e17);
   opacity: 1;
 }
@@ -362,7 +406,7 @@ a:not(.internal-link) {
 
 /** tags */
 
-.tag {
+a.tag {
   background: #100e18;
   color: #7a7a8c;
   color: var(--text-accent);
@@ -370,9 +414,9 @@ a:not(.internal-link) {
   border: 2px solid #28242f;
   border-radius: 2rem;
   padding: 0.05rem 0.5rem;
-  font-family: OperatorMonoSSmLig-Book, '华文细黑', 'STXihei', 'PingFang TC', '微软雅黑体',
-    'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun', 'Helvetica Neue',
-    'Helvetica', Arial, sans-serif !important;
+  font-family: 'OperatorMonoSSmLig-Book', 'Glow Sans SC', '华文细黑', 'STXihei', 'PingFang TC',
+    '微软雅黑体', 'Microsoft YaHei New', '微软雅黑', 'Microsoft Yahei', '宋体', 'SimSun',
+    'Helvetica Neue', 'Helvetica', Arial, sans-serif !important;
   font-size: 0.8rem;
   background: linear-gradient(to bottom, rgba(25, 22, 33) 0%, rgba(25, 22, 33) 100%);
   background-position: 0 100%;
@@ -382,35 +426,40 @@ a:not(.internal-link) {
   transition: all 400ms ease;
 }
 
-.tag:hover {
+a.tag:hover {
   color: var(--text-normal) !important;
   border-color: var(--text-accent);
   opacity: 1;
   background-size: 4px 50px;
 }
 
-.tag[href^='#working-draft'],
-.tag[href^='#进行中'] {
+a.tag[href*='#todo'],
+a.tag[href*='#待完成'] {
+  background-color: #be2e5e;
+  color: #fff;
+}
+a.tag[href*='#working-draft'],
+a.tag[href*='#进行中'] {
   background-color: #4d3ca6;
   color: #fff;
 }
-.tag[href^='#notes'],
-.tag[href^='#笔记'] {
+a.tag[href*='#notes'],
+a.tag[href*='#笔记'] {
   background-color: #17b978;
   color: #fff;
 }
-.tag[href^='#knowledge'],
-.tag[href^='#知识'] {
+a.tag[href*='#knowledge'],
+a.tag[href*='#知识'] {
   background-color: #005792;
   color: #fff;
 }
-.tag[href^='#article'],
-.tag[href^='#文章'] {
+a.tag[href*='#article'],
+a.tag[href*='#文章'] {
   background-color: #f95959;
   color: #fff;
 }
-.tag[href^='#ideas'],
-.tag[href^='#想法'] {
+a.tag[href*='#ideas'],
+a.tag[href*='#想法'] {
   background-color: #ffc93c;
   color: #000;
 }
@@ -555,7 +604,7 @@ blockquote {
   overflow-wrap: break-word;
   background-color: rgba(14, 210, 247, 0.05);
   word-wrap: break-word;
-  padding: 0.1rem 0.3rem 0.2rem;
+  padding: 0 5px;
   border-radius: 0.3rem;
   margin: 0 0.3rem;
   color: rgba(14, 210, 247, 0.9) !important;
@@ -567,13 +616,11 @@ blockquote {
   margin-block-start: 4em;
   margin-block-end: 4em;
   border: none;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    #100e17,
-    var(--text-accent),
-    var(--background-primary)
-  );
+  height: 0;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to right, transparent, var(--text-accent), transparent);
 }
 
 .markdown-preview-view hr::after {
@@ -598,4 +645,377 @@ blockquote {
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/** code syntax theme **/
+
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-comment {
+  color: #6272a4;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-string,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-string-2 {
+  color: #f1fa8c;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-number {
+  color: #bd93f9;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable {
+  color: #50fa7b;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-2 {
+  color: white;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-def {
+  color: #50fa7b;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-operator {
+  color: #ff79c6;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-keyword {
+  color: #ff79c6;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-atom {
+  color: #bd93f9;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-meta {
+  color: #f8f8f2;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-tag {
+  color: #ff79c6;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-attribute {
+  color: #50fa7b;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-qualifier {
+  color: #50fa7b;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-property {
+  color: #66d9ef;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-builtin {
+  color: #50fa7b;
+}
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-variable-3,
+.theme-dark .cm-s-obsidian pre.HyperMD-codeblock span.cm-type {
+  color: #ffb86c;
+}
+
+/** prism.js dracular theme **/
+
+/*
+* Dracula Theme for Prism.JS
+*
+* @author Gustavo Costa
+* e-mail: gusbemacbe@gmail.com
+*
+* @contributor Jon Leopard
+* e-mail: jonlprd@gmail.com
+*
+* @license MIT 2016-2018
+*/
+
+pre::-webkit-scrollbar {
+  width: 14px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #ccc;
+  background: rgb(40, 41, 54);
+  text-shadow: none;
+  font-family: 'OperatorMonoSSmLig-Book', PT Mono, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background-color: #5a5f80;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background-color: #5a5f80;
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: rgba(40, 41, 54, 1);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 4px 7px;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.limit-300 {
+  height: 300px !important;
+}
+
+.limit-400 {
+  height: 400px !important;
+}
+
+.limit-500 {
+  height: 500px !important;
+}
+
+.limit-600 {
+  height: 600px !important;
+}
+
+.limit-700 {
+  height: 700px !important;
+}
+
+.limit-800 {
+  height: 800px !important;
+}
+
+.theme-dark .token.comment {
+  color: rgba(98, 114, 164, 1);
+}
+
+.theme-dark .token.prolog {
+  color: rgba(207, 207, 194, 1);
+}
+
+.theme-dark .token.tag {
+  color: rgba(220, 104, 170, 1);
+}
+
+.theme-dark .token.entity {
+  color: rgba(139, 233, 253, 1);
+}
+
+.theme-dark .token.atrule {
+  color: rgba(98, 239, 117, 1);
+}
+
+.theme-dark .token.url {
+  color: rgba(102, 217, 239, 1);
+}
+
+.theme-dark .token.selector {
+  color: rgba(207, 207, 194, 1);
+}
+
+.theme-dark .token.string {
+  color: rgba(241, 250, 140, 1);
+}
+
+.theme-dark .token.property {
+  color: rgba(255, 184, 108, 1);
+}
+
+.theme-dark .token.important {
+  color: rgba(255, 121, 198, 1);
+  font-weight: bold;
+}
+
+.theme-dark .token.punctuation {
+  color: white;
+}
+
+.theme-dark .token.number {
+  color: rgba(189, 147, 249, 1);
+}
+
+.theme-dark .token.function {
+  color: rgba(80, 250, 123, 1);
+}
+
+.theme-dark .token.class-name {
+  color: rgba(255, 184, 108, 1);
+}
+
+.theme-dark .token.keyword {
+  color: rgba(255, 121, 198, 1);
+}
+
+.theme-dark .token.boolean {
+  color: rgba(255, 184, 108, 1);
+}
+
+.theme-dark .token.operator {
+  color: rgba(139, 233, 253, 1);
+}
+
+.theme-dark .token.char {
+  color: rgba(255, 135, 157, 1);
+}
+
+.theme-dark .token.regex {
+  color: rgba(80, 250, 123, 1);
+}
+
+.theme-dark .token.variable {
+  color: rgba(80, 250, 123, 1);
+}
+
+.theme-dark .token.constant {
+  color: rgba(255, 184, 108, 1);
+}
+
+.theme-dark .token.symbol {
+  color: rgba(255, 184, 108, 1);
+}
+
+.theme-dark .token.builtin {
+  color: rgba(255, 121, 198, 1);
+}
+
+.theme-dark .token.attr-value {
+  color: #7ec699;
+}
+
+.theme-dark .token.deleted {
+  color: #e2777a;
+}
+
+.theme-dark .token.namespace {
+  color: #e2777a;
+}
+
+.theme-dark .token.bold {
+  font-weight: bold;
+}
+
+.theme-dark .token.italic {
+  font-style: italic;
+}
+
+.theme-dark .token {
+  color: #ff79c6;
+}
+
+.language-cpp .theme-dark .token.string {
+  color: #8be9fd;
+}
+
+.language-c .theme-dark .token.string {
+  color: #8be9fd;
+}
+
+.theme-dark .language-css .token.selector {
+  color: rgba(80, 250, 123, 1);
+}
+
+.theme-dark .language-css .token.property {
+  color: rgba(255, 184, 108, 1);
+}
+
+.language-java span.theme-dark .token.class-name {
+  color: #8be9fd;
+}
+
+.language-java .theme-dark .token.class-name {
+  color: #8be9fd;
+}
+
+.language-markup .theme-dark .token.attr-value {
+  color: rgba(102, 217, 239, 1);
+}
+
+.language-markup .theme-dark .token.tag {
+  color: rgba(80, 250, 123, 1);
+}
+
+.language-objectivec .theme-dark .token.property {
+  color: #66d9ef;
+}
+
+.language-objectivec .theme-dark .token.string {
+  color: #50fa7b;
+}
+
+.language-php .theme-dark .token.boolean {
+  color: #8be9fd;
+}
+
+.language-php .theme-dark .token.function {
+  color: #ff79c6;
+}
+
+.language-php .theme-dark .token.keyword {
+  color: #66d9ef;
+}
+
+.language-ruby .theme-dark .token.symbol {
+  color: #8be9fd;
+}
+
+.language-ruby .theme-dark .token.class-name {
+  color: #cfcfc2;
+}
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
 }
