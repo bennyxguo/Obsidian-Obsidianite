@@ -8,6 +8,8 @@
 - Added `Dracula` syntax colors for `code blocks` in both preview and editor mode. (These two mode's code syntax colors may varies, because each use different renderer in Obsidian.)
 - Added the [Glow Sans SC](https://github.com/welai/glow-sans) Chinese font as a default for Chinese characters. For those that want to use it, you must install the font on your OS. (#1)
 
+> Code Block Syntax color support require you have Obsidian version 0.9.10+, also require to install the [cm-editor-syntax-highlight-obsidian](https://github.com/deathau/cm-editor-syntax-highlight-obsidian/releases/tag/0.0.1) plugin.
+
 ## Improvements ⚡️
 
 - Changed the matching logic for all special tags, now if the tag contains the special tag's words, will make them turn into special colors (before we need the special tag word be the starting of the tag to work).
