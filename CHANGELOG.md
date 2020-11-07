@@ -16,7 +16,7 @@
 
 ### Fixes 🔧
 
-- Changed the use of border style instead of background style for `hr` tags, as `death-au` found out that background doesn't not render in PDF export.
+- Changed the use of border style instead of background style for `hr` tags, as `death-au` found out that background doesn't render in PDF export.
 - Fixed the `inline code blocks` keep shaking in preview mode, when typing new letters in the editor.
 
 ## Version 1.0.3 (Nov 1, 2020)
