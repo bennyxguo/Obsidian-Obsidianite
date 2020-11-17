@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## Version 1.1.0 (Nov 17, 2020)
+
+### New Diamonds 💎
+
+- Added fully advanced clutter free mode for:
+  - HR lines
+  - inline-code
+  - Headings
+  - Lists
+  - Bold text
+  - Italic text
+- Added customizable theme variables at the beginning of css file, so it’s easier for theme editors to fine tune the theme. (Will add more variables at this part later versions)
+
+### Improvements ⚡️
+
+- Reorganized all the CSS styles code to place editor mode and preview mode styles together, for easier syncing with two.
+- Changed the colors of the navigation icons to less standout while inactive.
+
+### Fixes 🔧
+
+- Bold LaTeX disappears in the preview
+
+---
+
 ## Version 1.0.4 (Nov 7, 2020)
 
 ### New Diamonds 💎
@@ -10,7 +34,7 @@
 
 > Code Block Syntax color support require you have Obsidian version 0.9.10+, also require to install the [cm-editor-syntax-highlight-obsidian](https://github.com/deathau/cm-editor-syntax-highlight-obsidian/releases/tag/0.0.1) plugin.
 
-## Improvements ⚡️
+### Improvements ⚡️
 
 - Changed the matching logic for all special tags, now if the tag contains the special tag's words, will make them turn into special colors (before we need the special tag word be the starting of the tag to work).
 
@@ -19,12 +43,16 @@
 - Changed the use of border style instead of background style for `hr` tags, as `death-au` found out that background doesn't render in PDF export.
 - Fixed the `inline code blocks` keep shaking in preview mode, when typing new letters in the editor.
 
+---
+
 ## Version 1.0.3 (Nov 1, 2020)
 
 ### Tweaks 💎
 
 - Making link's text much more clear and readable with the custom underline style.
 - Changed the editor view of the link style to match the effect of the preview link style.
+
+---
 
 ## Version 1.0.2 (Oct 31, 2020)
 
