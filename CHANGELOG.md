@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## Version 1.1.1 (Nov 17, 2020)
+
+### Improvements ⚡️
+
+- Taking the suggesting from the community, removing the clutter free editor mode's headings `h1, h2, h3`, now just hide the `#` completely instead.
+
+### Fixes 🔧
+
+- Fixed the clutter free editor mode for list are not displaying correctly if spaces are added in front or at the back of the `+` sign.
+- Fixed the clutter free editor mode destroyed the display of numbers for ordered lists.
+
 ## Version 1.1.0 (Nov 17, 2020)
 
 ### New Diamonds 💎

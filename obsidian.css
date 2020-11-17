@@ -5,7 +5,7 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.1.0
+**  —— Version 1.1.1
 **  —— Made with 💎 by TriDiamond
 ** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
@@ -301,59 +301,7 @@ h6 {
 
 /** Header - !!clutter free mode!! **/
 div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-header {
-  opacity: 0;
-  position: relative;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header::before {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 50%;
-  height: 100%;
-  color: var(--text-sub-accent);
-  opacity: 0.5;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-1::before {
-  content: 'H1';
-  transform: translateY(-30%);
-  font-size: 20px;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-2::before {
-  content: 'H2';
-  transform: translateY(-45%);
-  font-size: 20px;
-  left: 10px;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-3::before {
-  content: 'H3';
-  transform: translateY(-40%);
-  font-size: 16px;
-  left: 14px;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-4::before {
-  content: 'H4';
-  transform: translateY(-45%);
-  font-size: 14px;
-  left: 16px;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-5::before {
-  content: 'H5';
-  transform: translateY(-45%);
-  font-size: 14px;
-  left: 20px;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-6::before {
-  content: 'H6';
-  transform: translateY(-45%);
-  font-size: 14px;
-  left: 25px;
+  display: none !important;
 }
 
 .HyperMD-header-2::after,
@@ -385,16 +333,25 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-header-6::before {
 
 .markdown-preview-section h3,
 .cm-header-3 {
+  font-size: 22px;
   color: var(--text-title-h2);
 }
 
 .markdown-preview-section h4,
 .cm-header-4 {
+  font-size: 18px;
   color: var(--text-title-h4);
 }
 
 .markdown-preview-section h5,
 .cm-header-5 {
+  font-size: 18px;
+  color: var(--text-title-h5);
+}
+
+.markdown-preview-section h6,
+.cm-header-6 {
+  font-size: 18px;
   color: var(--text-title-h5);
 }
 
@@ -526,43 +483,37 @@ strong::selection {
 .cm-em,
 em {
   color: #bb9af7;
-  font-family: OperatorMonoSSmLig-Book !important;
+  font-family: OperatorMonoSSmLig-Book, Rubik !important;
 }
 
 /**-------------------**
 | LISTING STYLES (ul, li, ol)
 **--------------------**/
 
-.cm-s-obsidian pre.HyperMD-list-line {
+/** Listing clutter free mode **/
+.cm-s-obsidian .CodeMirror-line span.cm-list-2 {
   position: relative;
+  z-index: 10;
 }
 
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list {
-  display: inline-block;
-  opacity: 0;
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul {
+  display: inline-flex !important;
+  position: relative;
+  text-indent: -150%;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 13.5px;
+  z-index: -10;
 }
 
-div:not(.CodeMirror-activeline) > .HyperMD-list-line::after {
-  content: '•';
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::after {
   position: absolute;
+  content: '•';
   color: var(--text-accent);
-}
-
-div:not(.CodeMirror-activeline) > .HyperMD-list-line.HyperMD-list-line-1::after {
-  top: 0.25em;
-  left: 1.2em;
-}
-div:not(.CodeMirror-activeline) > .HyperMD-list-line.HyperMD-list-line-2::after {
-  top: 0.25em;
-  left: 3em;
-}
-div:not(.CodeMirror-activeline) > .HyperMD-list-line.HyperMD-list-line-3::after {
-  top: 0.3em;
-  left: 4.9em;
-}
-div:not(.CodeMirror-activeline) > .HyperMD-list-line.HyperMD-list-line-4::after {
-  top: 0.3em;
-  left: 6.6em;
+  top: 0;
+  left: 0.48em;
+  font-weight: bold;
+  text-shadow: 0 0 0.5em var(--accent-2);
 }
 
 .cm-s-obsidian span.cm-formatting-list {
