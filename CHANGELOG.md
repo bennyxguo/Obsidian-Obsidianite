@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## Version 1.1.2 (Nov 18, 2020)
+
+### New Diamonds 💎
+
+- Themed editor view blockquote
+- Themed editor view tags
+
+### Improvements ⚡️
+
+- Dimming the brightness of internal link brackets in editor view.
+- At default bold text, headline, italic text for clutter free editor mode are disabled, due to the changing of the interface while editing, creates an uncomfortable experience with writing.
+
 ## Version 1.1.1 (Nov 17, 2020)
 
 ### Improvements ⚡️
@@ -33,8 +45,6 @@
 
 - Bold LaTeX disappears in the preview
 
----
-
 ## Version 1.0.4 (Nov 7, 2020)
 
 ### New Diamonds 💎
@@ -54,16 +64,12 @@
 - Changed the use of border style instead of background style for `hr` tags, as `death-au` found out that background doesn't render in PDF export.
 - Fixed the `inline code blocks` keep shaking in preview mode, when typing new letters in the editor.
 
----
-
 ## Version 1.0.3 (Nov 1, 2020)
 
 ### Tweaks 💎
 
 - Making link's text much more clear and readable with the custom underline style.
 - Changed the editor view of the link style to match the effect of the preview link style.
-
----
 
 ## Version 1.0.2 (Oct 31, 2020)
 
@@ -81,8 +87,6 @@ Hope you all like this update, and please feel free to give me feedbacks! Happy 
 - Reworked on the major colors, reduced the use of pink-purple colors for better long term reading and writing. (The purple colors looks good at first, but after long writing and reading, it feels a bit too much of a highlight).
 - Obisidian title bar's text had changed to Obsidianite blue, just to stay overall color sync.
 - Changed the color of file icon next to the file title, again to stay overall color sync.
-
----
 
 ## Version 1.0.1 (Oct 31, 2020)
 

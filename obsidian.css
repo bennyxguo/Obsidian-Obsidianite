@@ -5,7 +5,7 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.1.1
+**  —— Version 1.1.2
 **  —— Made with 💎 by TriDiamond
 ** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
@@ -108,6 +108,226 @@
     'Helvetica Neue', 'Helvetica', Arial, sans-serif !important;
 }
 
+/**-------------------**
+| CUSTOMIZED TAG COLOURS
+**--------------------**/
+
+/* For preview mode */
+a.tag[href*='#todo'],
+a.tag[href*='#待完成'] {
+  background-color: #be2e5e;
+  color: #fff;
+}
+/* For Editor Mode */
+.cm-s-obsidian .CodeMirror-line span.cm-tag-todo:not(.cm-formatting-hashtag) {
+  color: #ee6a96;
+}
+
+a.tag[href*='#working-draft'],
+a.tag[href*='#进行中'] {
+  background-color: #4d3ca6;
+  color: #fff;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-tag-working-draft:not(.cm-formatting-hashtag) {
+  color: #a897ff;
+}
+
+a.tag[href*='#notes'],
+a.tag[href*='#笔记'] {
+  background-color: #17b978;
+  color: #fff;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-tag-notes:not(.cm-formatting-hashtag) {
+  color: #45e0a2;
+}
+
+a.tag[href*='#knowledge'],
+a.tag[href*='#知识'] {
+  background-color: #005792;
+  color: #fff;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-tag-knowledge:not(.cm-formatting-hashtag) {
+  color: #6cbdf3;
+}
+
+a.tag[href*='#article'],
+a.tag[href*='#文章'] {
+  background-color: #f95959;
+  color: #fff;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-tag-article:not(.cm-formatting-hashtag) {
+  color: #ff7a7a;
+}
+
+a.tag[href*='#ideas'],
+a.tag[href*='#想法'] {
+  background-color: #ffc93c;
+  color: #000;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-tag-ideas:not(.cm-formatting-hashtag) {
+  color: #ffdc82;
+}
+
+/*****************************************************
+| CLUTTER FREE MODE STYLES
+|******************************************************
+| Can enable or disable certain
+| clutter free mode css properties.
+| ----------------------------------------------------
+| NOTE:
+| Heading, Bold text, Inline text clutter free
+| mode are disabled by default, I can't find
+| a good way to make them not jump around
+| when goes from inactive to active mode.
+| It makes very ignoring writing experience.
+| But you can enable them yourself, css are all here.
+/*******************************************************/
+
+/**-------------------**
+| BOLD TEXT CLUTTER FREE
+**--------------------**/
+
+/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-strong,
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-em {
+  display: none;
+} */
+
+/**-------------------**
+| HEADER CLUTTER FREE
+**--------------------**/
+
+/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-header {
+  display: none !important;
+} */
+
+/**-------------------**
+| INLINE CODE CLUTTER FREE
+**--------------------**/
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-code {
+  display: none;
+  position: relative;
+}
+
+div:not(.CodeMirror-activeline)
+  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
+  background-color: rgba(14, 210, 247, 0.05);
+  padding: 0 8.64px;
+  border-radius: 0.3rem;
+  color: rgba(14, 210, 247, 0.9) !important;
+}
+
+/**-------------------**
+| HR CLUTTER FREE
+**--------------------**/
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr {
+  opacity: 0;
+  position: relative;
+}
+
+div > .CodeMirror-line span.cm-hr {
+  display: inline-block;
+  padding: 1.7em 0;
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
+  left: 0;
+  top: 50%;
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::after {
+  content: '§';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: 50% 50%;
+  padding: 0.5rem;
+  color: var(--text-sub-accent);
+  background-color: var(--background-primary);
+}
+
+/**-------------------**
+| UL/OL LIST CLUTTER FREE
+**--------------------**/
+
+.cm-s-obsidian .CodeMirror-line span.cm-list-2 {
+  position: relative;
+  z-index: 10;
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul {
+  display: inline-flex !important;
+  position: relative;
+  text-indent: -150%;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 13.5px;
+  z-index: -10;
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::after {
+  position: absolute;
+  content: '•';
+  color: var(--text-accent);
+  top: 0;
+  left: 0.48em;
+  font-weight: bold;
+  text-shadow: 0 0 0.5em var(--accent-2);
+}
+
+/**-------------------**
+| BLOCK-QUOTE CLUTTER FREE
+**--------------------**/
+
+/* .cm-s-obsidian pre.HyperMD-quote > span {
+  padding: 1rem 2rem 1rem 3rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 2em;
+  border-top: 3px rgba(14, 210, 247, 0.5) solid;
+  border-bottom: transparent;
+  border-right: transparent;
+  background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
+} */
+.CodeMirror-line span.cm-formatting-quote {
+  color: var(--text-accent) !important;
+}
+
+.cm-s-obsidian span.cm-quote {
+  color: var(--text-normal);
+}
+
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-quote {
+  opacity: 0;
+}
+
+div:not(.CodeMirror-activeline) > pre.HyperMD-quote {
+  position: relative;
+}
+
+pre.HyperMD-quote:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 3px;
+  left: -0.2em;
+  top: 0;
+  background-color: #0f7088;
+}
+
 /**************************************
 | GENERAL STYLES
 | -------------------------------------
@@ -185,13 +405,6 @@ body {
   opacity: 1;
   color: var(--text-accent);
 }
-
-/* .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
-.workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
-  background-color: var(--background-primary-alt);
-  color: var(--text-accent);
-  background-color: red;
-} */
 
 /** Folder Lists **/
 body:not(.is-grabbing) .nav-file-title:hover,
@@ -299,11 +512,6 @@ h6 {
   font-weight: 600;
 }
 
-/** Header - !!clutter free mode!! **/
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-header {
-  display: none !important;
-}
-
 .HyperMD-header-2::after,
 .HyperMD-header-3::after,
 .HyperMD-header-4::after,
@@ -389,40 +597,6 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-header {
 | HR STYLES
 **--------------------**/
 
-/** HR line - !!clutter free mode!! **/
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr {
-  opacity: 0;
-  position: relative;
-}
-
-div > .CodeMirror-line span.cm-hr {
-  display: inline-block;
-  padding: 1.7em 0;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 1px;
-  background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
-  left: 0;
-  top: 50%;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::after {
-  content: '§';
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(60deg);
-  transform-origin: 50% 50%;
-  padding: 0.5rem;
-  color: var(--text-sub-accent);
-  background-color: var(--background-primary);
-}
-
 /** hr styles -- PREVIEW MODE */
 .markdown-preview-view hr {
   margin-block-start: 4em;
@@ -451,12 +625,6 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::after {
 | STRONG/BOLD STYLES
 **--------------------**/
 
-/** bold text !!clutter free mode!! **/
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-strong,
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-em {
-  display: none;
-}
-
 .cm-strong,
 strong {
   -webkit-background-clip: text;
@@ -482,39 +650,13 @@ strong::selection {
 
 .cm-em,
 em {
-  color: #bb9af7;
+  color: #bb9af7 !important;
   font-family: OperatorMonoSSmLig-Book, Rubik !important;
 }
 
 /**-------------------**
 | LISTING STYLES (ul, li, ol)
 **--------------------**/
-
-/** Listing clutter free mode **/
-.cm-s-obsidian .CodeMirror-line span.cm-list-2 {
-  position: relative;
-  z-index: 10;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul {
-  display: inline-flex !important;
-  position: relative;
-  text-indent: -150%;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 13.5px;
-  z-index: -10;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::after {
-  position: absolute;
-  content: '•';
-  color: var(--text-accent);
-  top: 0;
-  left: 0.48em;
-  font-weight: bold;
-  text-shadow: 0 0 0.5em var(--accent-2);
-}
 
 .cm-s-obsidian span.cm-formatting-list {
   color: var(--text-accent);
@@ -632,13 +774,10 @@ ul .task-list-item ul::before {
   text-decoration: none;
 }
 
-.cm-s-obsidian span.cm-link {
-  color: var(--text-accent) !important;
-  opacity: 0.5;
-}
-
+.cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-formatting-link {
   color: var(--text-faint) !important;
+  opacity: 0.25;
 }
 
 .external-link {
@@ -694,12 +833,19 @@ a:hover,
 | TAG STYLING
 **--------------------**/
 
-.cm-s-obsidian span.cm-hashtag {
+.cm-s-obsidian .CodeMirror-line span.cm-hashtag {
+  position: relative;
   color: var(--text-accent);
   opacity: 1;
   font-family: var(--tag-font-family);
   font-style: italic;
   text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.cm-s-obsidian .CodeMirror-line span.cm-formatting-hashtag {
+  color: var(--text-faint);
 }
 
 /** tags */
@@ -729,54 +875,9 @@ a.tag:hover {
   background-size: 4px 50px;
 }
 
-a.tag[href*='#todo'],
-a.tag[href*='#待完成'] {
-  background-color: #be2e5e;
-  color: #fff;
-}
-a.tag[href*='#working-draft'],
-a.tag[href*='#进行中'] {
-  background-color: #4d3ca6;
-  color: #fff;
-}
-a.tag[href*='#notes'],
-a.tag[href*='#笔记'] {
-  background-color: #17b978;
-  color: #fff;
-}
-a.tag[href*='#knowledge'],
-a.tag[href*='#知识'] {
-  background-color: #005792;
-  color: #fff;
-}
-a.tag[href*='#article'],
-a.tag[href*='#文章'] {
-  background-color: #f95959;
-  color: #fff;
-}
-a.tag[href*='#ideas'],
-a.tag[href*='#想法'] {
-  background-color: #ffc93c;
-  color: #000;
-}
-
 /**-------------------**
 | INLINE CODE STYLING
 **--------------------**/
-
-/** Inline code !!clutter free mode!! **/
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-code {
-  display: none;
-  position: relative;
-}
-
-div:not(.CodeMirror-activeline)
-  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
-  background-color: rgba(14, 210, 247, 0.05);
-  padding: 0 8.64px;
-  border-radius: 0.3rem;
-  color: rgba(14, 210, 247, 0.9) !important;
-}
 
 .CodeMirror-activeline
   span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
