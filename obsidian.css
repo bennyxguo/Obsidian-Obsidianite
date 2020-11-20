@@ -5,7 +5,7 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.1.2
+**  —— Version 1.1.3
 **  —— Made with 💎 by TriDiamond
 ** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
@@ -72,8 +72,8 @@
   --interactive-accent-rgb: #3dd7fb;
   --font-family-editor: 'Rubik';
   --font-family-preview: 'Rubik';
-  --bg-sub-accent-35: rgba(14, 210, 247, 0.55);
-  --bg-accent-35: rgba(122, 162, 247, 0.9);
+  --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
+  --bg-accent-55: rgba(14, 210, 247, 0.55);
   --text-highlight-bg: rgba(244, 86, 157, 0.25);
   --background-modifier-border: rgba(14, 210, 247, 0.05);
   --test-color: rgb(122, 162, 247);
@@ -283,7 +283,7 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::a
   content: '•';
   color: var(--text-accent);
   top: 0;
-  left: 0.48em;
+  left: 0.65em;
   font-weight: bold;
   text-shadow: 0 0 0.5em var(--accent-2);
 }
@@ -310,8 +310,15 @@ div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::a
   color: var(--text-normal);
 }
 
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-quote {
+/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-quote {
   opacity: 0;
+} */
+
+/* with left border rendered instead of > */
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting.cm-formatting-quote,
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hmd-indent-in-quote {
+  display: inline !important;
+  color: transparent !important;
 }
 
 div:not(.CodeMirror-activeline) > pre.HyperMD-quote {
@@ -453,43 +460,119 @@ span.cm-formatting-list,
 /*    EDITOR GENERAL STYLES            */
 /***************************************/
 
-/* --------------- */
-/* FUTURISTIC CHECKBOXES */
+/* OBSIDIANITE CHECKBOXES */
 
-input[type='checkbox'] {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 20%;
-  border: 1px solid var(--text-accent);
-  padding: 0;
-  background: transparent;
+.contains-task-list .task-list-item .contains-task-list {
+  padding-inline-start: 5px;
 }
 
-input[type='checkbox']:hover {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 20%;
-  border: 1px solid white;
-  padding: 0;
-  background: transparent;
+.contains-task-list .task-list-item ul.contains-task-list::before {
+  left: -46px !important;
+  border-width: 2px;
 }
 
-input[type='checkbox']:focus {
-  outline: 0;
+.contains-task-list .task-list-item {
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding-left: 30px;
 }
 
-input[type='checkbox']:checked {
-  background-color: transparent;
-  border: 1px solid transparent;
-  background-position: center;
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+.contains-task-list .task-list-item input[type='checkbox'] {
+  position: absolute;
+  top: 4px;
+  left: -23px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  z-index: 10;
+}
+
+.markdown-preview-view .list-collapse-indicator {
+  margin-left: -80px !important;
+  box-sizing: border-box;
+}
+
+.contains-task-list .task-list-item::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  justify-content: center;
+  border: 2px solid #9e9e9e;
+  margin-right: 15px;
+  border-radius: 3px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.contains-task-list .is-checked.task-list-item::before {
+  border: 10px solid var(--text-accent);
+  animation: bounce 300ms;
+}
+
+.contains-task-list .is-checked.task-list-item::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -21px;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  animation: checked-box 125ms 250ms forwards;
+  z-index: 5;
 }
 
 .markdown-preview-view ul > li.task-list-item.is-checked {
-  text-decoration: line-through;
-  color: var(--text-faint);
+  text-decoration: line-through !important;
+  color: var(--interactive-accent) !important;
+}
+
+.markdown-preview-view ul > li.task-list-item.is-checked ul > li:not(.is-checked) {
+  text-decoration: none !important;
+  color: var(--text-normal) !important;
+}
+
+@keyframes checked-box {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    transform: translate(0, 0) rotate(45deg);
+  }
+  33% {
+    width: 4px;
+    height: 0;
+    border-color: #212121;
+    transform: translate(0, 0) rotate(45deg);
+  }
+  100% {
+    width: 4px;
+    height: 8px;
+    border-color: #212121;
+    transform: translate(0, -8px) rotate(45deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    border-width: 2px;
+    /* transform: scale(1); */
+  }
+  33% {
+    border-width: 4px;
+    /* transform: scale(0.7); */
+  }
+  100% {
+    border-width: 10px;
+    /* transform: scale(1); */
+  }
 }
 
 /**************************************
@@ -762,30 +845,65 @@ ul .task-list-item ul::before {
 | LINKS STYLING
 **--------------------**/
 
+/** editor mode **/
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link {
   text-shadow: -1px -1px 2px var(--background-secondary), -1px 1px 2px var(--background-secondary),
     1px -1px 2px var(--background-secondary), 1px 1px 2px var(--background-secondary);
   color: var(--text-normal);
-  background: linear-gradient(to bottom, var(--bg-sub-accent-35) 0%, var(--bg-sub-accent-35) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px 5px;
   text-decoration: none;
 }
 
-.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-link {
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-sub-accent-55) 0%,
+    var(--bg-sub-accent-55) 100%
+  );
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link {
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
+}
+
 .cm-s-obsidian span.cm-formatting-link {
   color: var(--text-faint) !important;
   opacity: 0.25;
 }
 
+/** preview mode **/
 .external-link {
   padding: 0;
 }
 
-.internal-link:hover,
-.external-link:hover {
+.internal-link,
+.external-link {
+  text-shadow: -1px -1px 2px var(--background-primary), -1px 1px 2px var(--background-primary),
+    1px -1px 2px var(--background-primary), 1px 1px 2px var(--background-primary);
+  -webkit-text-fill-color: var(--text-normal);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px 5px;
+  text-decoration: none;
+  transition: all 350ms ease;
+}
+
+.internal-link {
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
+}
+
+.external-link {
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-sub-accent-55) 0%,
+    var(--bg-sub-accent-55) 100%
+  );
+}
+
+.internal-link:hover {
   text-shadow: -1px -1px 2px var(--background-modifier-border),
     -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
     1px 1px 2px var(--background-modifier-border);
@@ -793,9 +911,12 @@ ul .task-list-item ul::before {
   background-size: 4px 50px;
 }
 
-/* make external links italics to differentiate */
-a:not(.internal-link) {
-  font-style: italic;
+.external-link:hover {
+  text-shadow: -1px -1px 2px var(--background-modifier-border),
+    -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
+    1px 1px 2px var(--background-modifier-border);
+  -webkit-text-fill-color: var(--text-sub-accent);
+  background-size: 4px 50px;
 }
 
 /* link */
@@ -809,24 +930,22 @@ a,
   z-index: 1;
 }
 
+.cm-url {
+  color: var(--text-faint) !important;
+  opacity: 0.4;
+  font-weight: normal;
+}
+
+.cm-formatting-image {
+  color: var(--text-accent) !important;
+  opacity: 0.7;
+}
+
 /* link hover color */
 a:hover,
 .internal-link:hover {
   text-decoration: none !important;
   color: var(--text-accent);
-}
-
-.internal-link,
-.external-link {
-  text-shadow: -1px -1px 2px var(--background-primary), -1px 1px 2px var(--background-primary),
-    1px -1px 2px var(--background-primary), 1px 1px 2px var(--background-primary);
-  -webkit-text-fill-color: var(--text-normal);
-  background: linear-gradient(to bottom, var(--bg-sub-accent-35) 0%, var(--bg-sub-accent-35) 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 5px 5px;
-  text-decoration: none;
-  transition: all 350ms ease;
 }
 
 /**-------------------**
@@ -919,6 +1038,7 @@ blockquote {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-bottom: 2em;
+  margin-right: 0 !important;
   border-left: 3px rgba(14, 210, 247, 0.5) solid;
   border-top: transparent;
   border-bottom: transparent;
@@ -959,6 +1079,22 @@ blockquote {
   position: absolute;
   top: 0.1rem;
   left: -1.8rem;
+}
+
+/**-------------------**
+| FRONT-META STYLING
+**--------------------**/
+
+.cm-s-obsidian span.cm-def,
+.cm-s-obsidian span.cm-atom {
+  color: var(--text-faint);
+}
+.cm-s-obsidian span.cm-meta {
+  color: var(--text-accent);
+}
+
+.cm-s-obsidian span.cm-string {
+  color: var(--text-sub-accent);
 }
 
 /**-------------------**

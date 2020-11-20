@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## Version 1.1.3 (Nov 21, 2020)
+
+### New Diamonds 💎
+
+- Completely reworked custom checkbox with awesome animations!
+- Added front-meta theme styles.
+
+### Improvements ⚡️
+
+- Changed external links’ styles in preview mode, made it more suitable in sentences. (Before they are italic formats, which doesn’t look natural)
+- Making link urls and formatting part less bright, reduce focus from the the actual content part.
+- Adding themed style for image links
+- Changed the block-quote to have full width.
+
+### Fixes 🔧
+
+- Editor mode’s links font color is same as the formatting markup color, makes it hard to read.
+- Fixed list circle icon not showing as a full circle. Thanks to the sharp eyes out there spotting this!
+
 ## Version 1.1.2 (Nov 18, 2020)
 
 ### New Diamonds 💎
