@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## Version 1.1.4 (Dec 27, 2020)
+
+### New Diamonds 💎
+
+- Customized the code fences in editor view.
+- Adding language display for view code fences.
+- Different color for heading “#” in editing mode.
+
+<img src="https://raw.githubusercontent.com/TriDiamond/Obsidian-Obsidianite/main/images/demo4.png"/>
+
+### Improvements ⚡️
+
+- Making tags goes with header font size when used on headers.
+- Using border instead of positioning to make header underline. This will improve the stability of the underline rendering.
+
+### Fixes 🔧
+
+- Font size increased will cause inline code’s formatting changes on active. (Would like it to stay stationary in editor mode.)
+- Header highlight lines changed to use border instead for increase compatibility. (#15)
+- Fixed Keystroke tags (`<kbd>`) are not rendered. (#18)
+- Indent on first line of code block (#20)
+
 ## Version 1.1.3 (Nov 21, 2020)
 
 ### New Diamonds 💎
