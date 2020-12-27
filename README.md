@@ -35,6 +35,7 @@ Obsidian.md custom theme, it's dark and simple but yet still stays sparkles!
 <img src="./images/demo1.png">
 <img src="./images/demo2.png">
 <img src="./images/demo3.png">
+<img src="./images/demo4.png">
 
 ## Customizable Settings
 
