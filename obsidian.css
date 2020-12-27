@@ -1131,6 +1131,10 @@ pre[class$='html']:before {
   content: 'html';
 }
 
+pre[class$='css']:before {
+  content: 'css';
+}
+
 pre[class$='ejs']:before {
   content: 'ejs';
 }
