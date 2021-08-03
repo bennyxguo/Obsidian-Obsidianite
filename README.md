@@ -4,7 +4,7 @@
 
 <div align="center">
 
-v1.x | Designed & Coded with 💎 by TriDiamond <br>
+v1.x | Designed & Coded with 💎 by Benny Guo <br>
 Obsidian.md custom theme, it's dark and simple but yet still stays sparkles!
 
   <p align="center">
