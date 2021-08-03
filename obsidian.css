@@ -1090,10 +1090,6 @@ h6 a.tag {
   background-color: #191621;
 }
 
-.HyperMD-codeblock.CodeMirror-line {
-  padding: 0 1rem !important;
-}
-
 pre {
   position: relative;
 }
