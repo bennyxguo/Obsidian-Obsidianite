@@ -876,7 +876,7 @@ ul .task-list-item ul::before {
   text-decoration: none;
 }
 
-.cm-s-obsidian span.cm-link {
+.cm-s-obsidian span.cm-link:not(.cm-formatting-link) {
   background-image: linear-gradient(
     to bottom,
     var(--bg-sub-accent-55) 0%,
