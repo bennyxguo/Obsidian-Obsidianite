@@ -488,10 +488,14 @@ span.cm-formatting-list,
   padding-left: 30px;
 }
 
+.markdown-preview-view ul > li.task-list-item {
+  text-indent: -3em;
+}
+
 .contains-task-list .task-list-item input[type='checkbox'] {
-  position: absolute;
-  top: 4px;
-  left: -23px;
+  position: relative;
+  top: 2px;
+  left: -8px;
   width: 20px;
   height: 20px;
   margin: 0;
