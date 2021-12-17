@@ -365,6 +365,23 @@ body {
   background-color: var(--background-primary-alt);
   border-color: #101014;
   color: var(--text-faint);
+  position: absolute;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 8px;
+  padding: 8px 6px 6px 10px;
+  max-height: unset;
+  
+  opacity: 0.4;
+  transition: .5s;
+}
+
+.status-bar:hover {
+  opacity: 1;
+  transition: .2s;
 }
 
 .titlebar-text {
