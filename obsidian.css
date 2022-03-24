@@ -1065,7 +1065,7 @@ h6 a.tag {
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg:before {
-  position: absolute;
+  position: relative;
   content: '';
   top: -5%;
   left: 0;
