@@ -13,7 +13,9 @@ Obsidian.md custom theme, it's dark and simple but yet still stays sparkles!
     <img src="https://img.shields.io/github/license/TriDiamond/Obsidian-Obsidianite">
   </p>
 
-**[CHANGES](https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md)**
+**[CHANGES](https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md)** | **[OBSIDIAN FORUM](https://forum.obsidian.md/t/obsidianite-theme-version-2-0-0-oct-9-2022/7876)** | **[USAGE](#usage-notes)**
+  
+  
 
 </div>
 
@@ -48,3 +50,9 @@ Thanks for your love in advance! ☀️
 ## Join the Community
 
 <a href="https://discord.gg/VC7CrYfds5" target="_blank"><img src="https://discordapp.com/api/guilds/801943105913225246/widget.png?style=banner3" alt="ObsidiaNext Community Discord Server"></a>
+
+## Usage notes
+
+**Recommended font:** Rubik ([a free google font](https://fonts.google.com/specimen/Rubik?query=rubik))
+
+**Optional font:** OperatorMonoSSmLig-Book (Yes this is a paid font, works better with the theme, but not a must, if you have it. Make sure you install it on your computer. )
