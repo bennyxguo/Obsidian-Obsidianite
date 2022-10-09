@@ -650,7 +650,7 @@ strong kbd {
 .cm-em,
 em {
   color: #bb9af7 !important;
-  font-family: OperatorMonoSSmLig-Book, Rubik !important;
+  font-family: OperatorMonoSSmLig-Book, Rubik, var(--default-font) !important;
 }
 
 .cm-em.cm-formatting-em {
