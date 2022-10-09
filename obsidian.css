@@ -5,9 +5,9 @@
 ** ██║   ██║██╔══██╗╚════██║██║██║  ██║██║██╔══██║██║╚██╗██║██║   ██║   ██╔══╝
 ** ╚██████╔╝██████╔╝███████║██║██████╔╝██║██║  ██║██║ ╚████║██║   ██║   ███████╗
 **  ╚═════╝ ╚═════╝ ╚══════╝╚═╝╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚══════╝
-**  —— Version 1.1.4
-**  —— Made with 💎 by TriDiamond
-** Changes Log @see: https://github.com/TriDiamond/Obsidian-Obsidianite/blob/main/CHANGELOG.md
+**  —— Version 2.0.0
+**  —— Made with 💎 by Benny Guo
+** Changes Log @see: https://github.com/bennyxguo/Obsidian-Obsidianite/blob/main/CHANGELOG.md
 ** --------------------------------------------------------------- */
 
 /******************************************
@@ -66,7 +66,6 @@
   --interactive-accent: rgba(14, 210, 247, 0.5);
   --interactive-accent-hover: rgba(14, 210, 247, 0.8);
   --interactive-before: #5e6565;
-  --background-modifier-border: #92a1a17a;
   --blockquote-border: #4aa8fb;
   --tag-background: #a7b0b3;
   --interactive-accent-rgb: #3dd7fb;
@@ -74,6 +73,7 @@
   --font-family-preview: 'Rubik';
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
   --bg-accent-55: rgba(14, 210, 247, 0.55);
+  --bg-accent-25: rgba(14, 210, 247, 0.25);
   --text-highlight-bg: rgba(244, 86, 157, 0.25);
   --background-modifier-border: rgba(14, 210, 247, 0.05);
   --test-color: rgb(122, 162, 247);
@@ -81,8 +81,8 @@
 }
 
 /******************************************
-**  ██████╗██╗   ██╗███████╗████████╗ ██████╗ ███╗   ███╗██╗███████╗███████╗
-** ██╔════╝██║   ██║██╔════╝╚══██╔══╝██╔═══██╗████╗ ████║██║╚══███╔╝██╔════╝
+**   ██████╗██╗   ██╗███████╗████████╗ ██████╗ ███╗   ███╗██╗███████╗███████╗
+**  ██╔════╝██║   ██║██╔════╝╚══██╔══╝██╔═══██╗████╗ ████║██║╚══███╔╝██╔════╝
 ** ██║     ██║   ██║███████╗   ██║   ██║   ██║██╔████╔██║██║  ███╔╝ █████╗
 ** ██║     ██║   ██║╚════██║   ██║   ██║   ██║██║╚██╔╝██║██║ ███╔╝  ██╔══╝
 ** ╚██████╗╚██████╔╝███████║   ██║   ╚██████╔╝██║ ╚═╝ ██║██║███████╗███████╗
@@ -178,172 +178,6 @@ a.tag[href*='#想法'] {
   color: #ffdc82;
 }
 
-/*****************************************************
-| CLUTTER FREE MODE STYLES
-|******************************************************
-| Can enable or disable certain
-| clutter free mode css properties.
-| ----------------------------------------------------
-| NOTE:
-| Heading, Bold text, Inline text clutter free
-| mode are disabled by default, I can't find
-| a good way to make them not jump around
-| when goes from inactive to active mode.
-| It makes very ignoring writing experience.
-| But you can enable them yourself, css are all here.
-/*******************************************************/
-
-/**-------------------**
-| BOLD TEXT CLUTTER FREE
-**--------------------**/
-
-/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-strong,
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-em {
-  display: none;
-} */
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-em:not(.cm-formatting-em) {
-  padding: 0 0.45rem;
-}
-
-/**-------------------**
-| HEADER CLUTTER FREE
-**--------------------**/
-
-/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-header {
-  display: none !important;
-} */
-
-/**-------------------**
-| INLINE CODE CLUTTER FREE
-**--------------------**/
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-code {
-  display: none;
-  position: relative;
-}
-
-div:not(.CodeMirror-activeline)
-  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
-  background-color: rgba(14, 210, 247, 0.05);
-  padding: 0 0.55rem;
-  border-radius: 0.3rem;
-  color: rgba(14, 210, 247, 0.9) !important;
-}
-
-/**-------------------**
-| HR CLUTTER FREE
-**--------------------**/
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hr {
-  opacity: 0;
-  position: relative;
-}
-
-div > .CodeMirror-line span.cm-hr {
-  display: inline-block;
-  padding: 1.7em 0;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 1px;
-  background-image: linear-gradient(to right, transparent, var(--text-accent), transparent);
-  left: 0;
-  top: 50%;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line.HyperMD-hr::after {
-  content: '§';
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(60deg);
-  transform-origin: 50% 50%;
-  padding: 0.5rem;
-  color: var(--text-sub-accent);
-  background-color: var(--background-primary);
-}
-
-/**-------------------**
-| UL/OL LIST CLUTTER FREE
-**--------------------**/
-
-.cm-s-obsidian .CodeMirror-line span.cm-list-2 {
-  position: relative;
-  z-index: 10;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul {
-  display: inline-flex !important;
-  position: relative;
-  text-indent: -150%;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 13.5px;
-  z-index: -10;
-}
-
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul::after {
-  position: absolute;
-  content: '•';
-  color: var(--text-accent);
-  top: 0;
-  left: 0.65em;
-  font-weight: bold;
-  text-shadow: 0 0 0.5em var(--accent-2);
-}
-
-/**-------------------**
-| BLOCK-QUOTE CLUTTER FREE
-**--------------------**/
-
-/* .cm-s-obsidian pre.HyperMD-quote > span {
-  padding: 1rem 2rem 1rem 3rem;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-bottom: 2em;
-  border-top: 3px rgba(14, 210, 247, 0.5) solid;
-  border-bottom: transparent;
-  border-right: transparent;
-  background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
-} */
-.CodeMirror-line span.cm-formatting-quote {
-  color: var(--text-accent) !important;
-}
-
-.cm-s-obsidian span.cm-quote {
-  color: var(--text-normal);
-}
-
-/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-quote {
-  opacity: 0;
-} */
-
-/* with left border rendered instead of > */
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting.cm-formatting-quote,
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-hmd-indent-in-quote {
-  display: inline !important;
-  color: transparent !important;
-}
-
-div:not(.CodeMirror-activeline) > pre.HyperMD-quote {
-  position: relative;
-}
-
-pre.HyperMD-quote:before {
-  position: absolute;
-  content: '';
-  height: 100%;
-  width: 3px;
-  left: -0.2em;
-  top: 0;
-  background-color: #0f7088;
-}
-
 /**************************************
 | GENERAL STYLES
 | -------------------------------------
@@ -351,10 +185,35 @@ pre.HyperMD-quote:before {
 /**************************************/
 
 /** GENERAL STYLES **/
-
 body {
   font-weight: var(--body-font-weight, normal);
   font-size: var(--default-font-size, 16px);
+}
+
+body [role='presentation'] pre,
+body [role='presentation'] div,
+body .markdown-preview-section div {
+  font-weight: var(--body-font-weight, normal);
+  font-size: var(--default-font-size, 16px) !important;
+}
+
+::-webkit-scrollbar {
+  opacity: 1;
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--background-modifier-border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: var(--background-secondary);
+}
+
+.markdown-preview-view .internal-link.is-unresolved {
+  opacity: 0.7;
 }
 
 .titlebar {
@@ -374,14 +233,14 @@ body {
   border-top-left-radius: 8px;
   padding: 8px 6px 6px 10px;
   max-height: unset;
-  
+
   opacity: 0.4;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .status-bar:hover {
   opacity: 1;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .titlebar-text {
@@ -440,6 +299,18 @@ body {
   color: var(--text-accent);
 }
 
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background: var(--background-modifier-border);
+  border: 1px solid var(--bg-accent-25);
+}
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background: var(--background-modifier-border);
+  border: 1px solid var(--interactive-accent-hover);
+}
+
 /** Folder Lists **/
 body:not(.is-grabbing) .nav-file-title:hover,
 body:not(.is-grabbing) .nav-folder-title:hover {
@@ -486,6 +357,12 @@ span.cm-formatting-list,
 /***************************************/
 /*    EDITOR GENERAL STYLES            */
 /***************************************/
+
+.markdown-source-view.mod-cm6 .task-list-label {
+  position: relative;
+  top: -2px;
+  padding-top: 0;
+}
 
 /* OBSIDIANITE CHECKBOXES */
 
@@ -626,15 +503,19 @@ h6 {
   font-weight: 600;
 }
 
-pre.HyperMD-header.HyperMD-header-2,
-pre.HyperMD-header.HyperMD-header-3,
-pre.HyperMD-header.HyperMD-header-4,
-pre.HyperMD-header.HyperMD-header-5,
-pre.HyperMD-header.HyperMD-header-6 {
+.HyperMD-header.HyperMD-header-2,
+.HyperMD-header.HyperMD-header-3,
+.HyperMD-header.HyperMD-header-4,
+.HyperMD-header.HyperMD-header-5,
+.HyperMD-header.HyperMD-header-6 {
   border-bottom: 1px solid;
   border-width: 1px;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, var(--text-sub-accent), #100e17, #100e17, #100e17);
+}
+
+.HyperMD-header {
+  padding: 20px;
 }
 
 .markdown-preview-section h1,
@@ -705,6 +586,7 @@ pre.HyperMD-header.HyperMD-header-6 {
 **--------------------**/
 
 /** hr styles -- PREVIEW MODE */
+.cm-line hr,
 .markdown-preview-view hr {
   margin-block-start: 4em;
   margin-block-end: 4em;
@@ -716,6 +598,7 @@ pre.HyperMD-header.HyperMD-header-6 {
   border-image-source: linear-gradient(to right, transparent, var(--text-accent), transparent);
 }
 
+.cm-line hr::after,
 .markdown-preview-view hr::after {
   content: '§';
   display: inline-block;
@@ -785,36 +668,36 @@ em {
   color: var(--text-accent);
 }
 
-/* Adding a rule line before ul list -- EDITOR Mode  */
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-2::before,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-3::before,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-4::before {
-  content: '';
-  border-left: 1px solid var(--text-accent);
-  position: absolute;
-  opacity: 0.35;
-  left: 0.5em;
-  top: 0;
-  bottom: 0;
-  height: 100%;
+.markdown-source-view.mod-cm6 .list-bullet:after {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
 }
-/** Syncing the space in font of the list symbol with preview mode **/
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-2,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-3,
-.cm-s-obsidian pre.HyperMD-list-line.HyperMD-list-line-4 {
+
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  border-width: 2px;
+  border-color: var(--text-accent);
+  opacity: 0.35;
+  transition: opacity 500ms linear ease-in-out;
+}
+
+.markdown-source-view.mod-cm6 .cm-active-indent::before {
+  opacity: 0.8;
 }
 
 /* Adding a rule line before ul list -- PREVIEW Mode */
 ul ul,
-.cm-s-obsidian pre.HyperMD-list-line {
+ol ol,
+.markdown-preview-section > ul > li {
   position: relative;
 }
-.markdown-preview-section > ul > li > ul::before {
+ol > li > ol::before,
+ul > li > ul::before {
   content: '';
-  border-left: 1px solid var(--text-accent);
+  border-left: 2px solid var(--text-accent);
   position: absolute;
   opacity: 0.35;
-  left: -1em;
+  left: -0.95em;
   top: 0;
   bottom: 0;
 }
@@ -829,8 +712,6 @@ ol ul ul {
 }
 li > p {
   display: inline;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 ul li:not(.task-list-item)::before {
@@ -863,7 +744,7 @@ ul ol > li:not(.task-list-item)::before,
 ul ul ol > li:not(.task-list-item)::before,
 ul ul ul ol > li:not(.task-list-item)::before {
   content: '.' counter(li);
-  color: var(--text-accent);
+  color: var(--text-a);
   font-weight: normal;
   display: inline-block;
   width: 1em;
@@ -886,8 +767,9 @@ ul .task-list-item ul::before {
 **--------------------**/
 
 /** editor mode **/
+
 .cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
+.cm-s-obsidian span.cm-hmd-internal-link .cm-underline {
   text-shadow: -1px -1px 2px var(--background-secondary), -1px 1px 2px var(--background-secondary),
     1px -1px 2px var(--background-secondary), 1px 1px 2px var(--background-secondary);
   color: var(--text-normal);
@@ -903,10 +785,6 @@ ul .task-list-item ul::before {
     var(--bg-sub-accent-55) 0%,
     var(--bg-sub-accent-55) 100%
   );
-}
-
-.cm-s-obsidian span.cm-hmd-internal-link {
-  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
 }
 
 .cm-s-obsidian span.cm-formatting-link {
@@ -931,10 +809,6 @@ ul .task-list-item ul::before {
   transition: all 350ms ease;
 }
 
-.internal-link {
-  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
-}
-
 .external-link {
   background-image: linear-gradient(
     to bottom,
@@ -943,7 +817,13 @@ ul .task-list-item ul::before {
   );
 }
 
-.internal-link:hover {
+.cm-s-obsidian span.cm-hmd-internal-link .cm-underline,
+.internal-link {
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
+}
+
+.internal-link:hover,
+.cm-s-obsidian span.cm-hmd-internal-link .cm-underline:hover {
   text-shadow: -1px -1px 2px var(--background-modifier-border),
     -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
     1px 1px 2px var(--background-modifier-border);
@@ -992,7 +872,7 @@ a:hover,
 | TAG STYLING
 **--------------------**/
 
-.cm-s-obsidian .CodeMirror-line span.cm-hashtag {
+.cm-s-obsidian span.cm-hashtag {
   position: relative;
   color: var(--text-accent);
   opacity: 1;
@@ -1003,12 +883,16 @@ a:hover,
   font-weight: 500;
 }
 
-.cm-s-obsidian .CodeMirror-line span.cm-formatting-hashtag {
+.cm-s-obsidian span.cm-hashtag:hover {
+  text-decoration-line: underline;
+  text-decoration-color: var(--text-accent);
+}
+
+.cm-s-obsidian span.cm-formatting-hashtag {
   color: var(--text-faint);
 }
 
 /** tags */
-
 a.tag {
   background: #100e18;
   color: #7a7a8c;
@@ -1066,6 +950,18 @@ h6 a.tag {
 /**-------------------**
 | CODE FENCE STYLING
 **--------------------**/
+
+.cm-s-obsidian span.code-block-flair {
+  color: var(--text-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  background: rgba(16, 14, 23, 0.86);
+  border-radius: 8px;
+  padding: 0.1em 0.8em;
+  margin-top: 0.3rem;
+  margin-right: 0.3rem;
+}
 
 .cm-s-obsidian pre.HyperMD-codeblock {
   color: var(--text-sub-accent);
@@ -1176,6 +1072,7 @@ blockquote {
 
 /* blockquote style overwrite */
 
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote,
 .markdown-preview-view blockquote {
   position: relative;
   padding: 1rem 2rem 1rem 3rem;
@@ -1191,6 +1088,7 @@ blockquote {
   background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
 }
 
+.HyperMD-quote::before,
 .markdown-preview-view blockquote::before {
   content: '';
   position: absolute;
@@ -1201,6 +1099,7 @@ blockquote {
   background: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #13111a);
 }
 
+.HyperMD-quote::after,
 .markdown-preview-view blockquote::after {
   content: '';
   position: absolute;
@@ -1209,6 +1108,13 @@ blockquote {
   height: 2px;
   width: 25%;
   background: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #15131c);
+}
+
+.HyperMD-quote.HyperMD-quote-2::before,
+.HyperMD-quote.HyperMD-quote-3::before,
+.HyperMD-quote.HyperMD-quote-4::before,
+.HyperMD-quote.HyperMD-quote-5::before {
+  height: 0;
 }
 
 .markdown-preview-view blockquote p {
@@ -1247,6 +1153,8 @@ blockquote {
 **--------------------**/
 
 /** inline code */
+.cm-s-obsidian
+  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
 .markdown-preview-view code {
   overflow-wrap: break-word;
   background-color: rgba(14, 210, 247, 0.05);
@@ -1262,10 +1170,7 @@ blockquote {
 }
 
 .markdown-preview-view img {
-  display: block;
   border-radius: 8px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /** code syntax theme **/

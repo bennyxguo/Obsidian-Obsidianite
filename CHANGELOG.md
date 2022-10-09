@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## Version 2.0 (Oct 9, 2022)
+
+As I have being busy and stopped maintaining this repo for almost 2 years. I am so surprised that a lot of you had still being using and supporting this theme.
+
+I had updated the theme to 2.0 to support the latest `live preview` mode, so that all those Obsidianite lovers can use the theme and be happy again!
+
+Thanks for all your support for these 2 years! Love you all! :heart:
+
+> Note: I will look into those old issue tickets and fix those long waited bugs during the weekend each week, hope you all continue to support the theme! Thanks!
+
+### New Diamonds 💎
+
+- Removed all the old `Cluster Free` code (please move to `live preview` mode)
+- Added support for `live preview` mode [#44]
+  - Supporting all the features that is there fore for live preview
+
+### Fixes
+
+- Problem with code block should no longer exist with `live preview` [#52]
+- Images now align to left, fixed issue with image having no spaces between list items [#50][#34]
+- Fixed issue with strange block that hides top of the page in edit mode with `live preview` [#47]
+- Fixed bullet point not visible in view mode [#45]
+- Fixed bullet lists in edit mode not compatible with different fonts [#32]
+
 ## Version 1.1.4 (Dec 27, 2020)
 
 ### New Diamonds 💎
