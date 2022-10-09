@@ -768,7 +768,7 @@ ul .task-list-item ul::before {
 
 /** editor mode **/
 
-.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline,
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline {
   text-shadow: -1px -1px 2px var(--background-secondary), -1px 1px 2px var(--background-secondary),
     1px -1px 2px var(--background-secondary), 1px 1px 2px var(--background-secondary);
@@ -779,7 +779,7 @@ ul .task-list-item ul::before {
   text-decoration: none;
 }
 
-.cm-s-obsidian span.cm-link:not(.cm-formatting-link) {
+.cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
   background-image: linear-gradient(
     to bottom,
     var(--bg-sub-accent-55) 0%,
@@ -831,6 +831,7 @@ ul .task-list-item ul::before {
   background-size: 4px 50px;
 }
 
+.cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline:hover,
 .external-link:hover {
   text-shadow: -1px -1px 2px var(--background-modifier-border),
     -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
