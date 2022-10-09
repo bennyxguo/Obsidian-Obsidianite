@@ -766,6 +766,11 @@ ul .task-list-item ul::before {
 | LINKS STYLING
 **--------------------**/
 
+/** live preview mode **/
+.markdown-source-view.mod-cm6 .cm-underline {
+  text-decoration: unset;
+}
+
 /** editor mode **/
 
 .cm-s-obsidian span.cm-link,
