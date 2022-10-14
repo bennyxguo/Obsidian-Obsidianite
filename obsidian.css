@@ -895,28 +895,24 @@ a:hover,
 
 /** tags */
 a.tag {
-  background: #100e18;
-  color: #7a7a8c;
+  background-color: var(--tag-background);
   color: var(--text-accent);
   white-space: nowrap;
-  border: 2px solid #28242f;
-  border-radius: 2rem;
-  padding: 0.05rem 0.5rem;
+  border-radius: var(--tag-radius);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
   font-family: var(--tag-font-family);
-  font-size: 0.8rem;
-  background: linear-gradient(to bottom, rgba(25, 22, 33) 0%, rgba(25, 22, 33) 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 0 0;
   text-decoration: none;
-  transition: all 400ms ease;
+  font-style: italic;
+  font-size: 0.86rem;
+  font-weight: 500;
 }
 
 a.tag:hover {
-  color: var(--text-normal) !important;
   border-color: var(--text-accent);
   opacity: 1;
-  background-size: 4px 50px;
+  background-color: var(--tag-background) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--text-accent);
 }
 
 h1 a.tag,
@@ -1089,7 +1085,7 @@ blockquote {
   background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
 }
 
-.HyperMD-quote::before,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote::before,
 .markdown-preview-view blockquote::before {
   content: '';
   position: absolute;
