@@ -1050,6 +1050,10 @@ pre[class$='shell']:before {
   content: 'Shell';
 }
 
+pre[class$='powershell']:before {
+  content: 'PowerShell';
+}
+
 pre[class$='json']:before {
   content: 'Json';
 }
