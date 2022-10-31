@@ -949,7 +949,7 @@ h6 a.tag {
 | CODE FENCE STYLING
 **--------------------**/
 
-.cm-s-obsidian span.code-block-flair {
+.cm-s-obsidian span.code-block-flair:not(:empty) {
   color: var(--text-accent);
   font-weight: 600;
   text-transform: uppercase;
