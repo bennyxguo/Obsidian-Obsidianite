@@ -62,7 +62,7 @@
   --text-a: #6bcafb;
   --text-a-hover: #6bcafb;
   --text-mark: #263d92;
-  --pre-code: #252525;
+  --code-background: var(--background-secondary);
   --interactive-accent: rgba(14, 210, 247, 0.5);
   --interactive-accent-hover: rgba(14, 210, 247, 0.8);
   --interactive-before: #5e6565;
