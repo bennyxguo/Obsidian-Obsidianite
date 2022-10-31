@@ -940,7 +940,6 @@ h6 a.tag {
 
 .cm-s-obsidian span.cm-inline-code.cm-formatting-code {
   display: inline-flex;
-  max-width: 0.55rem;
   min-width: 0.55rem;
 }
 
