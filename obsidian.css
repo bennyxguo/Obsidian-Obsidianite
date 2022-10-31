@@ -677,6 +677,7 @@ em {
 .markdown-source-view.mod-cm6 .cm-indent::before {
   border-width: 2px;
   border-color: var(--text-accent);
+  margin-left: -1px;
   opacity: 0.35;
   transition: opacity 500ms linear ease-in-out;
 }
