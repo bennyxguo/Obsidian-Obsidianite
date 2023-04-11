@@ -722,7 +722,8 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
   background-repeat: repeat-x;
   background-size: 5px 5px;
   text-decoration: none;
-  transition: background 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  transition-property: color, background;
 }
 
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline,
@@ -732,27 +733,29 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
     var(--bg-sub-accent-55) 0%,
     var(--bg-sub-accent-55) 100%
   );
-  transition: background 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  transition-property: color, background;
 }
 
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline,
 .internal-link {
   background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
-  transition: background 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  transition-property: color, background;
 }
 
 .internal-link:hover,
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline:hover {
-  -webkit-text-fill-color: var(--text-normal);
-  color: var(--text-normal);
+  -webkit-text-fill-color: #fff;
+  color: #fff;
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
 
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline:hover,
 .external-link:hover {
-  -webkit-text-fill-color: var(--text-normal);
-  color: var(--text-normal);
+  -webkit-text-fill-color: #fff;
+  color: #fff;
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
