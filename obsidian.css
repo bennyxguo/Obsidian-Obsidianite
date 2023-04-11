@@ -253,6 +253,10 @@ body .markdown-preview-section div {
 }
 
 /** NAVIGATION / SIDE-DOCK **/
+.nav-file-title,
+.nav-folder-title {
+  border: 1px solid transparent
+}
 
 .nav-folder-collapse-indicator {
   color: var(--text-accent);
