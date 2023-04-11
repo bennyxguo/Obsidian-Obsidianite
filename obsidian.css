@@ -722,8 +722,7 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
   background-repeat: repeat-x;
   background-size: 5px 5px;
   text-decoration: none;
-  transition: all 350ms ease-in-out;
-  transition-property: color, background;
+  transition: background 350ms ease-in-out;
 }
 
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline,
@@ -733,15 +732,13 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
     var(--bg-sub-accent-55) 0%,
     var(--bg-sub-accent-55) 100%
   );
-  transition: all 350ms ease-in-out;
-  transition-property: color, background;
+  transition: background 350ms ease-in-out;
 }
 
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline,
 .internal-link {
   background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
-  transition: all 350ms ease-in-out;
-  transition-property: color, background;
+  transition: background 350ms ease-in-out;
 }
 
 .internal-link:hover,
