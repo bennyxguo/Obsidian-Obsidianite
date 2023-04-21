@@ -1,8 +1,7 @@
 {
-   "name": "Obsidianite",
-   "version": "2.0.1",
-   "minAppVersion": "1.1.0",
-   "author": "@bennyxguo",
-   "fundingUrl": "https://www.buymeacoffee.com/tridiamond",
-   "authorUrl": "https://twitter.com/bennyxguo"
+  "name": "Obsidianite",
+  "version": "2.0.1",
+  "author": "@bennyxguo",
+  "fundingUrl": "https://www.buymeacoffee.com/tridiamond",
+  "authorUrl": "https://twitter.com/bennyxguo"
 }
