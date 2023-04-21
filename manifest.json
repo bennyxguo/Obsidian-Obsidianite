@@ -1,7 +1,7 @@
 {
   "name": "Obsidianite",
   "version": "2.0.1",
-  "minAppVersion": "1.0.0",
-  "author": "bennyxguo",
+  "minAppVersion": "0.16.0",
+  "author": "Benny Guo",
   "authorUrl": "https://github.com/bennyxguo"
 }
