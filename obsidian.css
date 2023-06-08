@@ -295,11 +295,6 @@ a.tag[href*='#想法'] {
   color: var(--text-accent);
 }
 
-.nav-file-title,
-.nav-folder-title {
-  transition: all 150ms ease-in-out;
-}
-
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
   background: var(--background-secondary);
